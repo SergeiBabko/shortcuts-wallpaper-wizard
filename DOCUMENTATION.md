@@ -130,9 +130,9 @@ Hey, fellow geek! If you want to customize your Unsplash image selection, check 
 ### 🟡&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IMAGE PARAMETERS CAN BE CHANGED DEPENDING ON YOUR NEEDS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🟡
 
 **[originalImage]**: Controls the output image parameters.
-+ Default value: **false**.
-  + **true**: applies below parameters to the image
-  + **false**: leaves the image unchanged
++ Default value: **true**.
+  + **true**: leaves the image unchanged
+  + **false**: applies below parameters to the image
 
 **[format]**: The output format to convert the image to.
 + Default value: **jpg**.
@@ -146,17 +146,17 @@ Hey, fellow geek! If you want to customize your Unsplash image selection, check 
 
 **[sharp]**: Sharpens the image using luminance, providing crisp detail with minimal color artifacts.
 + Default value: **15**.
-  + **100**: extremely sharpen image with bunch of details and noise
+  + **100**: extremely sharpen image with a bunch of details and noise
   + **0**: leaves the image unchanged
 
 **[unsharpMask]**: Sharpens the image details using an unsharp mask.
 + Default value: **5**.
-  + **100**: extremely sharpen image with bunch of details and artifacts
+  + **100**: extremely sharpen image with a bunch of details and artifacts
   + **0**: leaves the image unchanged
 
 **[maskRadius]**: Determines how many pixels should be included to enhance the contrast.
 + Default value: **1**.
-  + **100**: extremely sharpen image with bunch of details and artifacts
+  + **100**: extremely sharpen image with a bunch of details and artifacts
   + **0**: leaves the image unchanged
 
 **[fit]**: Controls how the image is fit to its target dimensions after resizing.

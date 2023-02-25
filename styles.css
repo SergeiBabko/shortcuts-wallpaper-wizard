@@ -1,0 +1,134 @@
+:root {
+  --padding: 1.4em;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  background: #2c2c2c;
+}
+
+body {
+  margin: 0;
+  color: #F2F2F2;
+  user-select: none;
+  -ms-user-select: none;
+  flex-direction: column;
+  -moz-user-select: none;
+  padding: var(--padding);
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  min-height: calc(100% - 2 * var(--padding));
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+}
+
+body * {
+  z-index: 1;
+}
+
+.background {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: #2c2c2c;
+  pointer-events: none;
+  background-blend-mode: multiply;
+  background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.25) 200%);
+}
+
+body,
+h1,
+.link,
+.wrapper,
+.wrapper .links,
+.wrapper .preview,
+.wrapper .preview .images .image-preview .image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  gap: 1.4em;
+  text-align: center;
+}
+
+.wrapper {
+  gap: 1.4em;
+  margin: 1.4em 0;
+  max-width: 720px;
+  flex-direction: column;
+}
+
+.wrapper .description {
+  line-height: 1.4rem;
+}
+
+.wrapper .description > div {
+  text-align: center;
+}
+
+.wrapper .links {
+  row-gap: 1.4em;
+  flex-wrap: wrap;
+  column-gap: 2em;
+}
+
+.link {
+  gap: 1em;
+  color: #FF5E59;
+  text-decoration: none;
+}
+
+a.link:hover {
+  text-decoration: underline;
+}
+
+.link.unsplash {
+  display: inline;
+}
+
+.wrapper .preview {
+  width: 100%;
+  flex-direction: column;
+}
+
+.wrapper .preview #screen-size {
+  margin-bottom: 0;
+}
+
+.wrapper .preview .images {
+  gap: 1.4em;
+  width: 100%;
+  display: flex;
+}
+
+.wrapper .preview .images .image-preview {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wrapper .preview .images .image-preview h3 {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.wrapper .preview .images .image-preview .image-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper .preview .images .image-preview .image-wrapper .image {
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 0.5em;
+  box-shadow: 0 5px 20px rgb(0 0 0 / 10%), 0 3px 6px rgb(0 0 0 / 15%);
+}

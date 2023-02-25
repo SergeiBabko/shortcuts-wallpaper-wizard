@@ -1,10 +1,10 @@
-<h1 align="center">🌅🌉🏞️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wallpaper Wizard&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🏞️🌉🌅</h1>
+<h1 align="center">🌅🌉🏞️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WALLPAPER WIZARD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🏞️🌉🌅</h1>
 
 <div align="center">
   <br/>
-  <div>Say goodbye to boring wallpapers with '<strong>Wallpaper Wizard</strong>'!</div>
-  <div>With this shortcut you can easily update your device's wallpaper in a snap using stunning photos from <a href="https://unsplash.com/"><strong><i>Unsplash</i></strong></a> or your own personal Wallpapers collection.</div>
-  <div>Simply set your search preferences to find the perfect wallpaper that reflects your unique personality, and let the Shortcut do the rest.</div>
+  <div>Shortcut that revolutionizes your Apple device's wallpaper game!</div>
+  <div>With access to a vast collection of high-quality images from <a href="https://unsplash.com/"><strong><i>Unsplash</i></strong></a>, or your own personal Wallpapers, you can easily update your wallpaper in a snap.</div>
+  <div>Customize your search preferences to find the perfect wallpaper, and let the Shortcut do the rest.</div>
   <div>Whether you want to save or share your chosen wallpaper, it's all up to you!</div>
   <div>Give it a try and let your personality shine through!</div>
   <br/>
