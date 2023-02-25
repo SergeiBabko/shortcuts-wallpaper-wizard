@@ -135,7 +135,7 @@ const topics = new Map([
 // /////////////////////////////////////
 
 
-function render() {
+function render(sendToBody = true) {
   prepareParams();
   updateParamsArrays();
   const unsplashUrlOriginal = generateUnsplashUrl();
@@ -143,8 +143,11 @@ function render() {
     unsplashUrlOriginal,
     unsplashUrlUpdated: unsplashUrlOriginal + generateUnsplashImageParams()
   };
-  const htmlOutput = JSON.stringify(parameters);
-  document.body.textContent = encodeURIComponent(htmlOutput);
+  if (sendToBody) {
+    const htmlOutput = JSON.stringify(parameters);
+    document.body.textContent = encodeURIComponent(htmlOutput);
+  }
+  return parameters;
 }
 
 
