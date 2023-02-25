@@ -1,7 +1,7 @@
 /**
  * @Copyright
  * Copyright (C) 2023 Sergei Babko (Segich)
- * 
+ *
  * @Description
  * 🌅🌉🏞️     Wallpaper Wizard     🏞️🌉🌅
  *
@@ -18,7 +18,7 @@
  *   topics: string[],
  *   search: string[],
  * }
- * 
+ *
  * interface ImageParameters {
  *   originalImage: boolean,
  *   format: string,
@@ -37,10 +37,25 @@
  *   newApi: string,
  *   oldApi: string,
  * }
+ *
+ * interface ExecutionResult {
+ *   unsplashUrlOriginal: string,
+ *   unsplashUrlUpdated: string,
+ * }
  */
 
-// Variables
+
+// /////////////////////////////////////
+// GLOBAL VARIABLES
+// /////////////////////////////////////
+
+
 let params, searchParams, imageParams, apiParams;
+
+
+// /////////////////////////////////////
+// TEMP
+// /////////////////////////////////////
 
 const defaultSearchParameters = {
   useTopic: true,
@@ -114,17 +129,29 @@ const topics = new Map([
   ['arts & culture', { title: 'arts-culture', id: 'bDo48cUhwnY' }],
 ]);
 
-// JavaScript Functions
+
+// /////////////////////////////////////
+// EXECUTION
+// /////////////////////////////////////
+
+
 function render() {
   prepareParams();
   updateParamsArrays();
+  const unsplashUrlOriginal = generateUnsplashUrl();
   const parameters = {
-    unsplashUrl: generateUnsplashUrl(),
-    imageParameters: generateUnsplashImageParams(),
+    unsplashUrlOriginal,
+    unsplashUrlUpdated: unsplashUrlOriginal + generateUnsplashImageParams()
   };
   const htmlOutput = JSON.stringify(parameters);
   document.body.textContent = encodeURIComponent(htmlOutput);
 }
+
+
+// /////////////////////////////////////
+// FUNCTIONS
+// /////////////////////////////////////
+
 
 function prepareParams() {
   params = {
@@ -143,8 +170,35 @@ function updateParamsArrays() {
 }
 
 function generateUnsplashUrl() {
-  const url = params.clientId ? params.newApi : params.oldApi;
-  return url + generateUnsplashQueryParams();
+  const queryParams = generateUnsplashQueryParams();
+  return params.clientId ? prepareNewUrl(params.newApi, queryParams) : prepareOldUrl(params.oldApi, queryParams);
+}
+
+function prepareNewUrl(apiUrl, queryParams) {
+  const headers = [
+    {
+      name: 'Accept-Version',
+      value: 'v1'
+    },
+    {
+      name: 'Authorization',
+      value: `Client-ID ${params.clientId}`
+    },
+  ];
+  const image = JSON.parse(getFromUrl(`${apiUrl}${queryParams}`, 'responseText', headers));
+  return image.urls.raw;
+}
+
+function prepareOldUrl(apiUrl, queryParams) {
+  const redundantValues = [];
+  const url = getFromUrl(`${apiUrl}${queryParams}`, 'responseURL');
+  const splitUrl = url.split('?');
+  const searchParams = new URLSearchParams(splitUrl[1]);
+  searchParams.forEach((value, key) => {
+    if (key !== 'ixid' && key !== 'ixlib') redundantValues.push(key);
+  });
+  redundantValues.forEach(key => searchParams.delete(key));
+  return `${splitUrl[0]}?${searchParams.toString()}`;
 }
 
 function generateUnsplashQueryParams() {
@@ -157,8 +211,8 @@ function generateUnsplashQueryParams() {
     unsplashQueryParams = `?${queryParams.toString()}`;
   } else {
     // Compress image to load it faster
-    // We will use url without query in the Shortcut
-    const sizeHack = 10;
+    // We will use url without query in the prepareOldUrl function
+    const sizeHack = 2;
     const topics = getQueryParam(queryParams, 'topics');
     const search = getQueryParam(queryParams, 'query');
     unsplashQueryParams = `/${sizeHack}x${sizeHack}?${topics}${search}`;
@@ -231,3 +285,26 @@ function getRandomFromArr(arr) {
   if (!arr || !arr.length) return;
   return arr[Math.floor(Math.random() * arr.length)];
 }
+
+
+// /////////////////////////////////////
+// HTTP
+// /////////////////////////////////////
+
+
+/**
+ * respType: responseText | responseURL
+ */
+function getFromUrl(url, respType, headers) {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', url, false);
+  headers?.forEach((header) => xhr.setRequestHeader(header.name, header.value));
+  xhr.send(null);
+  if (xhr.status !== 200) return;
+  return xhr[respType];
+}
+
+
+// /////////////////////////////////////
+// SHORTCUT SETTINGS AND EXECUTION
+// /////////////////////////////////////
