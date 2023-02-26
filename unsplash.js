@@ -50,11 +50,11 @@
 // /////////////////////////////////////
 
 
-let params, searchParams, imageParams, apiParams;
+let params;
 
 
 // /////////////////////////////////////
-// TEMP
+// DEFAULT VARIABLES
 // /////////////////////////////////////
 
 const defaultSearchParameters = {
@@ -91,7 +91,7 @@ const defaultSearchParameters = {
 const defaultImageParameters = {
   originalImage: false,
   format: 'jpg',
-  quality: 100,
+  quality: 80,
   sharp: 15,
   unsharpMask: 5,
   maskRadius: 1,
@@ -136,13 +136,10 @@ const topics = new Map([
 
 
 function render(sendToBody = true) {
-  prepareParams();
   updateParamsArrays();
-  const unsplashUrlOriginal = generateUnsplashUrl();
-  const parameters = {
-    unsplashUrlOriginal,
-    unsplashUrlUpdated: unsplashUrlOriginal + generateUnsplashImageParams()
-  };
+  const unsplashUrlOriginal = params.passed ? generateUnsplashUrl() : getRandomPirate();
+  const unsplashUrlUpdated = params.passed ? unsplashUrlOriginal + generateUnsplashImageParams() : unsplashUrlOriginal;
+  const parameters = { unsplashUrlOriginal, unsplashUrlUpdated };
   if (sendToBody) {
     const htmlOutput = JSON.stringify(parameters);
     document.body.textContent = encodeURIComponent(htmlOutput);
@@ -156,11 +153,12 @@ function render(sendToBody = true) {
 // /////////////////////////////////////
 
 
-function prepareParams() {
+function prepareVariables(searchParams, imageParams, apiParams, creator) {
   params = {
     ...(searchParams || defaultSearchParameters),
     ...(imageParams || defaultImageParameters),
     ...(apiParams || defaultApiParameters),
+    passed: checkCopyright(creator)
   };
 }
 
@@ -256,7 +254,14 @@ function getQueryParam(queryParams, query) {
 }
 
 function generateUnsplashImageParams() {
-  if (params.originalImage) return '';
+  if (params.originalImage) {
+    // Unsplash may provide binary stream instead of image, so I have to convert it to jpg anyway
+    const queryParams = getQueryParams({
+      fm: 'jpg',
+      q: 100,
+    });
+    return '&' + queryParams.toString();
+  }
   const { format, quality, sharp, unsharpMask, maskRadius, fit, crop } = params;
   const screenSize = getScreenSize();
   const queryParams = getQueryParams({
@@ -287,6 +292,16 @@ function getScreenSize() {
 function getRandomFromArr(arr) {
   if (!arr || !arr.length) return;
   return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function checkCopyright(creator) {
+  const copyright = JSON.parse(getFromUrl('https://tinyurl.com/wallpaper-wizard-copyright', 'responseText'));
+  return JSON.stringify(copyright) === JSON.stringify(creator);
+}
+
+function getRandomPirate() {
+  const idx = Math.floor(Math.random() * 5) + 1;
+  return `https://raw.githubusercontent.com/SergeiBabko/shortcuts-wallpaper-wizard/main/assets/pirates/${idx}.jpg`;
 }
 
 

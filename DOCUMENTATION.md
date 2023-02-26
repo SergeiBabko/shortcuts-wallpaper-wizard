@@ -2,70 +2,83 @@
 
 &nbsp;
 
-## ‼️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ATTENTION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;‼️
+## ⬇️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Main Enchanter Copyright&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬇️
 
-Be aware that you need to create **«Wallpapers»** album manually before using this shortcut. Otherwise, **«Recents»** album will be used.\
-Also, don’t forget to set your beloved Wallpapers album in next places:
+**By the power of the mystical Merlin’s beard, I have crafted this shortcut to bring forth an unparalleled experience of beauty and creativity.\
+Its copyright object serves as a mark of its unique origins and the great effort that went into its creation.\
+Embrace its magic and let your imagination soar!**
 
-- Get random photo depends on chances: Photos
-- Get random photo depends on connection: Photos
+&nbsp;
 
-![Album_Selection](/assets/docs/12.Album_Selection.PNG)
-![Album_Selection](/assets/docs/13.Album_Selection.PNG)
+## ⬇️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wallpapers Album&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬇️
+
+As a wallpaper wizard, I offer you the power to keep your favorite wallpapers close at hand. Create a local album by entering a name in the field below, and you'll be able to access them offline. Already have an album? Just enter its name in the field instead.
+
+![Album_Selection](/assets/docs/1.Album_Selection.PNG)
 
 &nbsp;
 
 ## ⬇️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User Authentication&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬇️
 
-To authenticate requests to the Unsplash API, enter **your application's access key** in the provided text field. Otherwise, the outdated Unsplash Sources API will be used.
+To unlock the mystical powers of Unsplash's vast collection of images, simply enter **your application's access key** in the enchanted text field provided. Otherwise, you will be limited to the outdated Unsplash Sources API, which lacks the wizardry of the latest version.
 
-For more information, visit [***Unsplash Authentication***](https://unsplash.com/documentation#public-authentication).\
+For further knowledge, visit the [***Unsplash Authentication realm***](https://unsplash.com/documentation#public-authentication).\
 **Example**: *4c1628f48a311b249d7b4340e03223de8a5d12916fa837ff2d08b0bf44f6805f*
 
-![Authentication_Token](/assets/docs/1.Authentication_Token.PNG)
+![Authentication_Token](/assets/docs/2.Authentication_Token.PNG)
 
 &nbsp;
 
 ## ⬇️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unsplash Image Chances&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬇️
 
-With the chance parameters, you're in full control of the wallpaper you see.\
-Choose a **100%** chance for a fresh Unsplash photo every time, or **set it lower** to mix it up with your own favorite Wallpapers.
+Who needs a crystal ball when you have chance parameters?\
+Unleash the full potential of your wallpaper with the enchanting chances.\
+Set the chance to **100%** to conjure new Unsplash photos every time, or **let the magic take hold** and mix in your favorite personal wallpapers.
 
-![Chances_Selection](/assets/docs/2.Chances_Selection.PNG)
+![Chances_Selection](/assets/docs/3.Chances_Selection.PNG)
 
 &nbsp;
 
-## ⬇️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Possibility To Save Or Share Wallpaper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬇️
+## ⬇️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Save Or Share Wallpaper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬇️
 
-Whether you want to save new Wallpaper or not, it's up to you! Simply type **«auto»**, **«show»** or **leave it empty** to enable or disable saving options.
+By the power of magic, you have the ability to choose whether to save your newly discovered wallpapers!\
+Simply type **«wizard»** to show the magic menu, **«muggle»** to auto save the wallpaper, or **leave the invocation empty** to disable saving options.
 
-![Chances_Selection](/assets/docs/3.Save_or_Share_Dialog.PNG)
+![Chances_Selection](/assets/docs/4.Save_or_Share_Dialog.PNG)
 ![Save_or_Share_Menu](/assets/docs/14.Save_or_Share_Menu.PNG)
 ![Save_Menu](/assets/docs/15.Save_Menu.PNG)
-![Clipboard_Menu](/assets/docs/16.Clipboard_Menu.PNG)
+![Clipboard_Menu](/assets/docs/16.Copy_Menu.PNG)
+![Clipboard_Menu](/assets/docs/17.Share_Menu.PNG)
+
+&nbsp;
+
+## ⬇️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Save Or Share Options Delay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬇️
+
+Fear not, dear adventurer! The menu will gracefully glide onto the screen, allowing you a moment to bask in the beauty of your current wallpaper before deciding if you want to enchant it with a touch of magic.
+![Save_or_Share_Menu_Delay](/assets/docs/5.Save_or_Share_Delay.PNG)
 
 &nbsp;
 
 ## ⬇️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unsplash Search Parameters&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬇️
 
-Customize your search results with your preferred parameters. You can use as many words as you like for each parameter, but make sure there's **at least one word** to get the results you want. Otherwise, the Shortcut will choose a random image for you.
+Behold, adventurer! With the power of this shortcut, you hold the key to your dream wallpaper. By customizing your search parameters, you can command the wand to conjure up the perfect image that matches your heart's desire. Whether you desire a mystical forest or a shimmering galaxy, let my magic guide you to the perfect wallpaper. Just **be sure to speak the right incantations**, lest you be granted a random image instead.
 
 To enable the use of these search parameters, set the **[useSearch]** in [***Search Parameters***](#search-parameters-can-be-changed-as-you-wish) to **«true»**. You can also select whether to perform a random search or the first one on the list by setting the **[randomSearch]** in [***Search Parameters***](#search-parameters-can-be-changed-as-you-wish) to **«true»** or **«false»**.
 
 Keep in mind that in order to use search parameters, the use of topics must be disabled, which can be achieved by setting the **[useTopics]** in [***Search Parameters***](#search-parameters-can-be-changed-as-you-wish) to **«false»**.
 
 **Examples**:
-+ space
-+ cat in hat
-+ sea, beach, yacht
++ wizard
++ Merlin's beard
++ fairy, magic, broomstick
 
-![Search_Query](/assets/docs/4.Search_Query.PNG)
+![Search_Query](/assets/docs/6.Search_Query.PNG)
 
 &nbsp;
 
 ## ⬇️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unsplash Topics&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬇️
 
-The Unsplash API provides a list of predefined topics for you to choose from, so there's no need to add new ones. Custom topics will be ignored, I promise :)
+The mystical Unsplash API has a curated selection of topics for you to choose from. Do not venture beyond their enchanted list, or your custom topics will be banished to the dark realm of irrelevance. Fear not, I will ensure that the magic of the Unsplash API blesses your search with the most wondrous wallpapers.
 
 To enable the use of these topics, set the **[useTopics]** in [***Search Parameters***](#search-parameters-can-be-changed-as-you-wish) to **«true»**. You can also select whether to use a random topic or the first one on the list by setting the **[randomTopic]** in [***Search Parameters***](#search-parameters-can-be-changed-as-you-wish) to **«true»** or **«false»**.
 
@@ -90,13 +103,13 @@ Here’s the list of **default topics**:
 + current events
 + arts & culture
 
-![Topics](/assets/docs/5.Topics.PNG)
+![Topics](/assets/docs/7.Topics.PNG)
 
 &nbsp;
 
 ## ⬇️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Configuration Parameters&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬇️
 
-Hey, fellow geek! If you want to customize your Unsplash image selection, check out the parameters sections. But make sure you know what you're doing!
+Greetings, wizard! If you seek to tailor your Unsplash image experience, delve into the parameters section. However, tread with caution and be mindful of the spells you cast!
 
 **Parameters**:\
 🟢 [***Search Parameters***](#search-parameters-can-be-changed-as-you-wish)\
@@ -106,7 +119,7 @@ Hey, fellow geek! If you want to customize your Unsplash image selection, check 
 ### 🟢&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SEARCH PARAMETERS CAN BE CHANGED AS YOU WISH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🟢
 
 **[useTopics]**: Toggle to use topics list.
-+ Default value: **false**.
++ Default value: **true**.
   + **true**: topics list will be used, user search parameters will be ignored
   + **false**: topics list will be ignored
 
@@ -116,16 +129,16 @@ Hey, fellow geek! If you want to customize your Unsplash image selection, check 
   + **false**: first topic will be selected from the list
 
 **[useSearch]**: Toggle to use search list.
-+ Default value: **true**.
++ Default value: **false**.
   + **true**: search list will be used, **[useTopics]** should be set to **«false»**
   + **false**: search list will be ignored
 
 **[randomSearch]**: Toggle to use random search query.
-+ Default value: **true**.
++ Default value: **false**.
   + **true**: random search will be selected from the list
   + **false**: first search will be selected from the list
 
-![Search_Parameters](/assets/docs/6.Search_Parameters.PNG)
+![Search_Parameters](/assets/docs/8.Search_Parameters.PNG)
 
 ### 🟡&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IMAGE PARAMETERS CAN BE CHANGED DEPENDING ON YOUR NEEDS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🟡
 
@@ -179,7 +192,7 @@ Hey, fellow geek! If you want to customize your Unsplash image selection, check 
 + Default value: **500**.
   + **number**: the image will be increased by the number of pixels specified
 
-![Image_Parameters](/assets/docs/7.Image_Parameters.PNG)
+![Image_Parameters](/assets/docs/9.Image_Parameters.PNG)
 
 ### 🔴&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;API PARAMETERS SHOULD NOT BE CHANGED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🔴
 
@@ -187,32 +200,32 @@ Hey, fellow geek! If you want to customize your Unsplash image selection, check 
 **[newApi]**: New Unsplash API. Will be used if **[clientId]** is defined\
 **[oldApi]**: Outdated Unsplash API. Will be used if **[clientId]** is not defined
 
-![API_Parameters](/assets/docs/8.API_Parameters.PNG)
+![API_Parameters](/assets/docs/10.API_Parameters.PNG)
 
 &nbsp;
 
 ## ⬇️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Internet Connection Check&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬇️
 
-Worried about internet connectivity? Relax!\
-Whether you're connected or not, I've got you covered. If you're **online**, enjoy stunning Unsplash images. If you're **offline**, your Wallpapers album will come to the rescue.
+Behold, fellow traveler of the digital realm! Worry not about the fickleness of internet connectivity, for my powers can bridge the gap between online and offline worlds. When the **winds of cyberspace are in your favor**, marvel at the breathtaking beauty of Unsplash images. But should the tides turn against you and the **internet waves crash down**, fear not! Your trusty Wallpapers album shall come to your aid, a beacon of familiarity and comfort in a sea of digital chaos.
 
-![Connection_Check](/assets/docs/9.Connection_Check.PNG)
+![Connection_Check](/assets/docs/11.Connection_Check.PNG)
 
 &nbsp;
 
 ## ⬇️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GitHub JS Code Link&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬇️
 
-Do unfamiliar links make you uneasy? Don't worry, this is my **GitHub link** that has been **shortened** by a [***TinyURL***](https://tinyurl.com) to make it more convenient to use in shortcuts.
+Do unfamiliar links make you uneasy? Don't worry, my magical wand has transformed my **GitHub link** into a more **convenient** one with the help of [***TinyURL***](https://tinyurl.com).
 
-![GitHub_JS_Link](/assets/docs/10.GitHub_JS_Link.PNG)
+![GitHub_JS_Link](/assets/docs/12.GitHub_JS_Link.PNG)
 
 &nbsp;
 
 ## ⬇️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Main JavaScript Magic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬇️
 
-In this section I’ll do some magic for you. My magic wand will check all of you wishes, and shoot with an image link and parameters.
+Get ready for some magic! In this section, my wand will fulfill all your wishes and conjure up an image link with your preferred parameters. Whether you want a stunning Unsplash image or a personal wallpaper from your album, my magic wand will make it happen. Just tell me what you want, and I'll make it appear before your very eyes!
 
 **Relies on**:
++ Creator
 + Client ID
 + Topics
 + Query
@@ -220,4 +233,4 @@ In this section I’ll do some magic for you. My magic wand will check all of yo
 + Image Parameters
 + API Parameters
 
-![JS_Magic](/assets/docs/11.JS_Magic.PNG)
+![JS_Magic](/assets/docs/13.JS_Magic.PNG)
