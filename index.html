@@ -42,15 +42,18 @@
     <div class="wrapper">
       <div class="description">
         <div>Welcome to the magical world of the <strong>Wallpaper Wizard!</strong></div>
-        <div>With access to a vast collection of high-quality masterpieces from <a class="link unsplash" href="https://unsplash.com/" target="_blank">Unsplash</a>, or your own personal Wallpapers, you can easily update your wallpaper in a snap.</div>
+        <div>With access to a vast collection of high-quality masterpieces from <a class="link gallery" href="https://unsplash.com/" target="_blank">Unsplash</a> and <a class="link gallery" href="https://picsum.photos/" target="_blank">Lorem Picsum</a>, or your own personal Wallpapers, you can easily update your wallpaper in a snap.</div>
         <div>Customize your search preferences to find the perfect wallpaper, and let the sorcery do the rest.</div>
         <div>Whether you want to save or share your chosen wallpaper, it's all up to you!</div>
         <div>Give it a try and let the magic unfold!</div>
       </div>
       <div class="links-group">
+        <h2>PREVIEW</h2>
+        <video src="https://files.catbox.moe/gqrq13.mp4" width="372" height="567" controls autoplay muted playsinline></video>
+
         <h2>AVAILABLE AT</h2>
         <div class="links">
-          <a class="link btn shortcut" href="https://www.icloud.com/shortcuts/1c8d3426f8ba485a8afcd9f5e395a980" target="_blank">
+          <a class="link btn shortcut" href="https://www.icloud.com/shortcuts/317a9498c0be489aafd53751e3e6e646" target="_blank">
             <img class="img-left" src="assets/links/shortcut.png" alt="">
             <span>Apple Shortcuts</span>
             <img class="img-right" src="assets/links/shortcut.png" alt="">
@@ -91,20 +94,9 @@
       <div class="preview" onclick="openImage(event)">
         <h3 id="screen-size">Screen Size: </h3>
 
-        <div class="images">
-          <div class="image-preview">
-            <h3 id="original-text">Original</h3>
-            <div class="image-wrapper">
-              <img id="original-image" class="image" alt="Original Image" src="" />
-            </div>
-          </div>
-
-          <div class="image-preview">
-            <h3 id="updated-text">With Custom Settings</h3>
-            <div class="image-wrapper">
-              <img id="updated-image" class="image" alt="Updated Image" src="" />
-            </div>
-          </div>
+        <div class="image-preview">
+          <h3 id="wallpaper-title">Wallpaper</h3>
+          <img id="wallpaper-image" class="image" alt="Wallpaper Image" src="" />
         </div>
       </div>
     </div>

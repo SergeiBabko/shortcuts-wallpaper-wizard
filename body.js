@@ -6,26 +6,27 @@ function printScreenDimensions() {
 }
 
 function showImages(parameters) {
-  const originalText = document.getElementById('original-text');
-  const updatedText = document.getElementById('updated-text');
-  const original = document.getElementById('original-image');
-  const updated = document.getElementById('updated-image');
-  original.onload = () => originalText.innerHTML = `Original (${original.naturalWidth}x${original.naturalHeight})`;
-  updated.onload = () => updatedText.innerHTML = `With Custom Settings (${updated.naturalWidth}x${updated.naturalHeight})`;
-  original.src = parameters.unsplashUrlOriginal;
-  updated.src = parameters.unsplashUrlUpdated;
+  const wallTitle = document.getElementById('wallpaper-title');
+  const wallImage = document.getElementById('wallpaper-image');
+  wallImage.onload = () => wallTitle.innerHTML = `Wallpaper: ${wallImage.naturalWidth}x${wallImage.naturalHeight}`;
+  wallImage.src = parameters.unsplashUrlOriginal;
 }
 
 function openImage(event) {
   if (event.target.src) window.open(event.target.src, '_blank');
 }
 
-const creator = {
-  year: 2023,
-  creator: 'Segich',
-  url: 'https://tinyurl.com/wallpaper-wizard'
-};
+function getFromUrl(url, respType, headers) {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', url, false);
+  headers?.forEach((header) => xhr.setRequestHeader(header.name, header.value));
+  xhr.send(null);
+  if (xhr.status !== 200) return;
+  return xhr[respType];
+}
+
+const copyright = JSON.parse(getFromUrl('https://tinyurl.com/wallpaper-wizard-copyright', 'responseText'));
 
 printScreenDimensions();
-prepareVariables(null, null, null, creator);
+prepareVariables(null, null, null, copyright);
 showImages(render(false));

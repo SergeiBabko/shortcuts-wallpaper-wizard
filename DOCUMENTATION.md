@@ -45,17 +45,10 @@ By the power of magic, you have the ability to choose whether to save your newly
 Simply type **«wizard»** to show the magic menu, **«muggle»** to auto save the wallpaper, or **leave the invocation empty** to disable saving options.
 
 ![Chances_Selection](/assets/docs/4.Save_or_Share_Dialog.PNG)
-![Save_or_Share_Menu](/assets/docs/14.Save_or_Share_Menu.PNG)
-![Save_Menu](/assets/docs/15.Save_Menu.PNG)
-![Clipboard_Menu](/assets/docs/16.Copy_Menu.PNG)
-![Clipboard_Menu](/assets/docs/17.Share_Menu.PNG)
-
-&nbsp;
-
-## ⬇️&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Save Or Share Options Delay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⬇️
-
-Fear not, dear adventurer! The menu will gracefully glide onto the screen, allowing you a moment to bask in the beauty of your current wallpaper before deciding if you want to enchant it with a touch of magic.
-![Save_or_Share_Menu_Delay](/assets/docs/5.Save_or_Share_Delay.PNG)
+![Save_or_Share_Menu](/assets/docs/13.Save_or_Share_Menu.PNG)
+![Save_Menu](/assets/docs/14.Save_Menu.PNG)
+![Clipboard_Menu](/assets/docs/15.Copy_Menu.PNG)
+![Clipboard_Menu](/assets/docs/16.Share_Menu.PNG)
 
 &nbsp;
 
@@ -72,7 +65,7 @@ Keep in mind that in order to use search parameters, the use of topics must be d
 + Merlin's beard
 + fairy, magic, broomstick
 
-![Search_Query](/assets/docs/6.Search_Query.PNG)
+![Search_Query](/assets/docs/5.Search_Query.PNG)
 
 &nbsp;
 
@@ -84,26 +77,29 @@ To enable the use of these topics, set the **[useTopics]** in [***Search Paramet
 
 Here’s the list of **default topics**:
 + wallpapers
-+ renders
-+ travel
 + nature
-+ street photography
-+ experimental
++ renders
 + textures & patterns
-+ animals
-+ architecture & interior
-+ fashion & beauty
++ travel
 + film
-+ food & drink
 + people
-+ spirituality
++ architecture & interior
++ street-photography
++ experimental
++ illustration
++ 3d
++ flat
++ hand drawn
++ icons
++ line art
++ patterns
++ fashion & beauty
 + business & work
-+ athletics
-+ health
-+ current events
-+ arts & culture
++ food & drink
++ sports
++ archival
 
-![Topics](/assets/docs/7.Topics.PNG)
+![Topics](/assets/docs/6.Topics.PNG)
 
 &nbsp;
 
@@ -138,7 +134,7 @@ Greetings, wizard! If you seek to tailor your Unsplash image experience, delve i
   + **true**: random search will be selected from the list
   + **false**: first search will be selected from the list
 
-![Search_Parameters](/assets/docs/8.Search_Parameters.PNG)
+![Search_Parameters](/assets/docs/7.Search_Parameters.PNG)
 
 ### 🟡&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IMAGE PARAMETERS CAN BE CHANGED DEPENDING ON YOUR NEEDS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🟡
 
@@ -192,15 +188,15 @@ Greetings, wizard! If you seek to tailor your Unsplash image experience, delve i
 + Default value: **500**.
   + **number**: the image will be increased by the number of pixels specified
 
-![Image_Parameters](/assets/docs/9.Image_Parameters.PNG)
+![Image_Parameters](/assets/docs/8.Image_Parameters.PNG)
 
 ### 🔴&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;API PARAMETERS SHOULD NOT BE CHANGED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🔴
 
 **[clientId]**: User access key to new Unsplash API\
-**[newApi]**: New Unsplash API. Will be used if **[clientId]** is defined\
-**[oldApi]**: Outdated Unsplash API. Will be used if **[clientId]** is not defined
+**[unsplashApi]**: Unsplash API. Will be used if **[clientId]** is defined\
+**[picsumApi]**: Lorem Picsum API. Will be used if **[clientId]** is not defined
 
-![API_Parameters](/assets/docs/10.API_Parameters.PNG)
+![API_Parameters](/assets/docs/9.API_Parameters.PNG)
 
 &nbsp;
 
@@ -208,7 +204,7 @@ Greetings, wizard! If you seek to tailor your Unsplash image experience, delve i
 
 Behold, fellow traveler of the digital realm! Worry not about the fickleness of internet connectivity, for my powers can bridge the gap between online and offline worlds. When the **winds of cyberspace are in your favor**, marvel at the breathtaking beauty of Unsplash images. But should the tides turn against you and the **internet waves crash down**, fear not! Your trusty Wallpapers album shall come to your aid, a beacon of familiarity and comfort in a sea of digital chaos.
 
-![Connection_Check](/assets/docs/11.Connection_Check.PNG)
+![Connection_Check](/assets/docs/10.Connection_Check.PNG)
 
 &nbsp;
 
@@ -216,7 +212,7 @@ Behold, fellow traveler of the digital realm! Worry not about the fickleness of 
 
 Do unfamiliar links make you uneasy? Don't worry, my magical wand has transformed my **GitHub link** into a more **convenient** one with the help of [***TinyURL***](https://tinyurl.com).
 
-![GitHub_JS_Link](/assets/docs/12.GitHub_JS_Link.PNG)
+![GitHub_JS_Link](/assets/docs/11.GitHub_JS_Link.PNG)
 
 &nbsp;
 
@@ -233,7 +229,7 @@ Get ready for some magic! In this section, my wand will fulfill all your wishes 
 + Image Parameters
 + API Parameters
 
-![JS_Magic](/assets/docs/13.JS_Magic.PNG)
+![JS_Magic](/assets/docs/12.JS_Magic.PNG)
 
 &nbsp;
 

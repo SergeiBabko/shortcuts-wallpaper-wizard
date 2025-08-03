@@ -34,8 +34,8 @@
  *
  * interface ApiParameters {
  *   clientId: string,
- *   newApi: string,
- *   oldApi: string,
+ *   unsplashApi: string,
+ *   picsumApi: string,
  * }
  *
  * interface ExecutionResult {
@@ -57,6 +57,7 @@ let params;
 // DEFAULT VARIABLES
 // /////////////////////////////////////
 
+
 const defaultSearchParameters = {
   useTopic: true,
   randomTopic: false,
@@ -64,24 +65,27 @@ const defaultSearchParameters = {
   randomSearch: false,
   topics: [
     'wallpapers',
-    'renders',
-    'travel',
     'nature',
-    'street photography',
-    'experimental',
+    'renders',
     'textures & patterns',
-    'animals',
-    'architecture & interior',
-    'fashion & beauty',
+    'travel',
     'film',
-    'food & drink',
     'people',
-    'spirituality',
+    'architecture & interior',
+    'street-photography',
+    'experimental',
+    'illustration',
+    '3d',
+    'flat',
+    'hand drawn',
+    'icons',
+    'line art',
+    'patterns',
+    'fashion & beauty',
     'business & work',
-    'athletics',
-    'health',
-    'current events',
-    'arts & culture'
+    'food & drink',
+    'sports',
+    'archival'
   ],
   search: [
     'wallpaper',
@@ -89,44 +93,47 @@ const defaultSearchParameters = {
 };
 
 const defaultImageParameters = {
-  originalImage: false,
+  originalImage: true,
   format: 'jpg',
-  quality: 80,
+  quality: 100,
   sharp: 15,
   unsharpMask: 5,
   maskRadius: 1,
   fit: 'crop',
   crop: 'center',
-  defaultSize: 2560,
+  defaultSize: 3000,
   offset: 500,
 };
 
 const defaultApiParameters = {
   clientId: '',
-  newApi: 'https://api.unsplash.com/photos/random',
-  oldApi: 'https://source.unsplash.com/random',
+  unsplashApi: 'https://api.unsplash.com/photos/random',
+  picsumApi: 'https://picsum.photos/',
 };
 
 const topics = new Map([
-  ['wallpapers', { title: 'wallpapers', id: 'bo8jQKTaE0Y' }],
-  ['renders', { title: '3d-renders', id: 'CDwuwXJAbEw' }],
-  ['travel', { title: 'travel', id: 'Fzo3zuOHN6w' }],
-  ['nature', { title: 'nature', id: '6sMVjTLSkeQ' }],
-  ['street photography', { title: 'street-photography', id: 'xHxYTMHLgOc' }],
-  ['experimental', { title: 'experimental', id: 'qPYsDzvJOYc' }],
-  ['textures & patterns', { title: 'textures-patterns', id: 'iUIsnVtjB0Y' }],
-  ['animals', { title: 'animals', id: 'Jpg6Kidl-Hk' }],
-  ['architecture & interior', { title: 'architecture-interior', id: 'M8jVbLbTRws' }],
-  ['fashion & beauty', { title: 'fashion-beauty', id: 'S4MKLAsBB74' }],
-  ['film', { title: 'film', id: 'hmenvQhUmxM' }],
-  ['food & drink', { title: 'food-drink', id: 'xjPR4hlkBGA' }],
-  ['people', { title: 'people', id: 'towJZFskpGg' }],
-  ['spirituality', { title: 'spirituality', id: '_8zFHuhRhyo' }],
-  ['business & work', { title: 'business-work', id: 'aeu6rL-j6ew' }],
-  ['athletics', { title: 'athletics', id: 'Bn-DjrcBrwo' }],
-  ['health', { title: 'health', id: '_hb-dl4Q-4U' }],
-  ['current events', { title: 'current-events', id: 'BJJMtteDJA4' }],
-  ['arts & culture', { title: 'arts-culture', id: 'bDo48cUhwnY' }],
+  ['wallpapers', { id: 'bo8jQKTaE0Y', key: 'wallpapers', title: 'Wallpapers' }],
+  ['nature', { id: '6sMVjTLSkeQ', key: 'nature', title: 'Nature' }],
+  ['renders', { id: 'CDwuwXJAbEw', key: '3d-renders', title: '3D Renders' }],
+  ['textures & patterns', { id: 'iUIsnVtjB0Y', key: 'textures-patterns', title: 'Textures' }],
+  ['travel', { id: 'Fzo3zuOHN6w', key: 'travel', title: 'Travel' }],
+  ['film', { id: 'hmenvQhUmxM', key: 'film', title: 'Film' }],
+  ['people', { id: 'towJZFskpGg', key: 'people', title: 'People' }],
+  ['architecture & interior', { id: 'M8jVbLbTRws', key: 'architecture-interior', title: 'Architecture & Interiors' }],
+  ['street-photography', { id: 'xHxYTMHLgOc', key: 'street-photography', title: 'Street Photography' }],
+  ['experimental', { id: 'qPYsDzvJOYc', key: 'experimental', title: 'Experimental' }],
+  ['illustration', { id: 'If65AuNOOxQ', key: 'illustration-wallpapers', title: 'Wallpapers' }],
+  ['3d', { id: 'whIY33yKE84', key: '3d', title: '3D' }],
+  ['flat', { id: 'pIF7l5_hgxg', key: 'flat', title: 'Flat' }],
+  ['hand drawn', { id: 'tthdwfNPCcw', key: 'hand-drawn', title: 'Hand Drawn' }],
+  ['icons', { id: 'FkTvWj0W5bo', key: 'icons', title: 'Icons' }],
+  ['line art', { id: 'rNbj3NBAY_w', key: 'line-art', title: 'Line Art' }],
+  ['patterns', { id: 'upmleWZC83Y', key: 'patterns', title: 'Patterns' }],
+  ['fashion & beauty', { id: 'S4MKLAsBB74', key: 'fashion-beauty', title: 'Fashion & Beauty' }],
+  ['business & work', { id: 'aeu6rL-j6ew', key: 'business-work', title: 'Business & Work' }],
+  ['food & drink', { id: 'xjPR4hlkBGA', key: 'food-drink', title: 'Food & Drink' }],
+  ['sports', { id: 'Bn-DjrcBrwo', key: 'sports', title: 'Sports' }],
+  ['archival', { id: 'E--_pnIirG4', key: 'archival', title: 'Archival' }]
 ]);
 
 
@@ -138,7 +145,7 @@ const topics = new Map([
 function render(sendToBody = true) {
   updateParamsArrays();
   const unsplashUrlOriginal = params.passed ? generateUnsplashUrl() : getRandomPirate();
-  const unsplashUrlUpdated = params.passed ? unsplashUrlOriginal + generateUnsplashImageParams() : unsplashUrlOriginal;
+  const unsplashUrlUpdated = params.passed && params.clientId ? unsplashUrlOriginal + generateUnsplashImageParams() : unsplashUrlOriginal;
   const parameters = { unsplashUrlOriginal, unsplashUrlUpdated };
   if (sendToBody) {
     const htmlOutput = JSON.stringify(parameters);
@@ -171,11 +178,10 @@ function updateParamsArrays() {
 }
 
 function generateUnsplashUrl() {
-  const queryParams = generateUnsplashQueryParams();
-  return params.clientId ? prepareNewUrl(params.newApi, queryParams) : prepareOldUrl(params.oldApi, queryParams);
+  return params.clientId ? prepareNewUrl(params.unsplashApi) : prepareOldUrl(params.picsumApi);
 }
 
-function prepareNewUrl(apiUrl, queryParams) {
+function prepareNewUrl(apiUrl) {
   const headers = [
     {
       name: 'Accept-Version',
@@ -186,38 +192,22 @@ function prepareNewUrl(apiUrl, queryParams) {
       value: `Client-ID ${params.clientId}`
     },
   ];
+  const queryParams = generateUnsplashQueryParams();
   const image = JSON.parse(getFromUrl(`${apiUrl}${queryParams}`, 'responseText', headers));
   return image.urls.raw;
 }
 
-function prepareOldUrl(apiUrl, queryParams) {
-  const redundantValues = [];
-  const url = getFromUrl(`${apiUrl}${queryParams}`, 'responseURL');
-  const splitUrl = url.split('?');
-  const searchParams = new URLSearchParams(splitUrl[1]);
-  searchParams.forEach((value, key) => {
-    if (key !== 'ixid' && key !== 'ixlib') redundantValues.push(key);
-  });
-  redundantValues.forEach(key => searchParams.delete(key));
-  return `${splitUrl[0]}?${searchParams.toString()}`;
+function prepareOldUrl(apiUrl) {
+  const screenSize = getScreenSize();
+  return getFromUrl(`${apiUrl}${screenSize}`, 'responseURL');
 }
 
 function generateUnsplashQueryParams() {
-  let unsplashQueryParams;
   const queryParams = getQueryParams({
     topics: getTopic(),
     query: getSearch()
   });
-  if (params.clientId) {
-    unsplashQueryParams = `?${queryParams.toString()}`;
-  } else {
-    // Compress image to load it faster
-    // We will use url without query in the prepareOldUrl function
-    const sizeHack = 2;
-    const topics = getQueryParam(queryParams, 'topics');
-    const search = getQueryParam(queryParams, 'query');
-    unsplashQueryParams = `/${sizeHack}x${sizeHack}?${topics}${search}`;
-  }
+  const unsplashQueryParams = `?${queryParams.toString()}`;
   return encodeURI(unsplashQueryParams);
 }
 
@@ -225,7 +215,7 @@ function getTopic() {
   if (!params.useTopic) return;
   const topicId = params.randomTopic ? getRandomFromArr(params.topics) : params.topics[0];
   const topic = topics.get(topicId);
-  return params.clientId ? topic?.id : topic?.title;
+  return params.clientId ? topic?.id : topic?.key;
 }
 
 function getSearch() {
@@ -247,10 +237,6 @@ function getQueryParams(query) {
   });
   emptyValues.forEach(key => queryParams.delete(key));
   return queryParams;
-}
-
-function getQueryParam(queryParams, query) {
-  return queryParams.has(query) ? queryParams.get(query) : '';
 }
 
 function generateUnsplashImageParams() {
@@ -286,7 +272,7 @@ function getScreenSize() {
   const { defaultSize, offset } = params;
   const width = window.screen.width;
   const height = window.screen.height;
-  return Math.round((width > height ? width : height) * window.devicePixelRatio + offset) || defaultSize;
+  return Math.round(Math.max(width, height) * window.devicePixelRatio + offset) || defaultSize;
 }
 
 function getRandomFromArr(arr) {
